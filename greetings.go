@@ -1,4 +1,4 @@
-package greetings
+package "github.com/kieran-ohara/go-greet"
 
 import "fmt"
 
