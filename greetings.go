@@ -1,7 +1,11 @@
 package gogreet
 
-import "fmt"
-import "errors"
+import (
+	"errors"
+	"fmt"
+  "math/rand"
+  "time"
+)
 
 // Hello returns a greeting for the named person.
 func Hello(name string) (string, error) {
@@ -10,6 +14,20 @@ func Hello(name string) (string, error) {
 		return "", errors.New("empty name")
 
 	}
-	message := fmt.Sprintf("Hi, %v. Welcome, LOL!", name)
+	message := fmt.Sprintf(randomMessage(), name)
 	return message, nil
+}
+
+// init sets initial values for variables used in the function.
+func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+func randomMessage() string  {
+  slice := []string{
+    "Hi %v",
+    "Hello there, %v",
+    "What is going on, %v?!",
+  }
+  return slice[rand.Intn(len(slice))];
 }
