@@ -1,3 +1,3 @@
-module github.com/kieran-ohara/go-greet
+module github.com/kieran-ohara/gogreet
 
 go 1.19
