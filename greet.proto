@@ -1,7 +1,6 @@
 syntax = "proto3";
-package greetrpcdist;
 
-option go_package = ".";
+option go_package = "./greetrpcdist";
 
 message Greet {
   string name = 1;
